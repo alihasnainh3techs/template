@@ -1,0 +1,7 @@
+.fs-22 {
+    font-size: 22px !important;
+}
+
+.no-arrow::after {
+    display: none !important;
+}

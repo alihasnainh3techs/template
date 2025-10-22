@@ -1,3 +1,34 @@
+[data-bs-theme="dark"] .text-body-tertiary {
+    color: var(--bs-dark) !important;
+}
+
 body {
-    font-family: "Inter", sans-serif;
+    font-family: "Outfit", sans-serif;
+}
+
+.btn-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 0px;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.logo-wrapper {
+    height: 83px;
+}
+
+.sidebar-menu-link {
+    text-decoration: none;
+    color: var(--bs-light);
+    display: inline-block;
+    width: 100%;
+    border-radius: var(--bs-border-radius-sm);
+}
+
+.sidebar-menu-link:hover {
+    color: var(--bs-dark);
+    background: var(--bs-light);
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -8,9 +8,7 @@
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <!-- remix icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
     <!-- jquey cdn -->
@@ -18,14 +16,300 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- bootstrap -->
     <link rel="stylesheet" href="./assets/bootstrap-5.3.8/css/bootstrap.css">
+    <!-- metismenu cdn -->
+    <link rel="stylesheet" href="https://unpkg.com/metismenu/dist/metisMenu.min.css">
+    <!-- custom utilities css -->
+    <link rel="stylesheet" href="./assets/css/custom-utilities.css">
     <!-- custom css  -->
     <link rel="stylesheet" href="./assets/css/main.css">
+    <script>
+        (() => {
+            const storedTheme = localStorage.getItem("data-bs-theme");
+            if (storedTheme)
+                $("html").attr("data-bs-theme", storedTheme);
+        })();
+    </script>
 </head>
 
 <body>
 
+    <div class="d-flex">
+
+        <aside class="position-fixed top-0 start-0 z-3 vh-100 bg-dark border-end" style="width: 260px !important;">
+            <div class="border-bottom logo-wrapper p-3">
+                <a href="./index.html">
+                    <img src="./assets/images/logo.png" width="160" alt="Logo">
+                </a>
+            </div>
+            <div class="sidebar-menu p-3 overflow-y-auto h-100">
+                <ul id="metismenu" class="list-unstyled">
+                    <li class="mm-active">
+                        <a href="./index.html" class="sidebar-menu-link p-2">
+                            <i class="ri-dashboard-line me-2"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-menu-link p-2">
+                            <i class="ri-computer-line me-2"></i>
+                            Reception Desk
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-menu-link p-2">
+                            <i class="ri-team-line me-2"></i>
+                            Visitor Desk
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-menu-link p-2">
+                            <i class="ri-calendar-line me-2"></i>
+                            Appointment Desk
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-menu-link p-2">
+                            <i class="ri-star-line me-2"></i>
+                            Event Desk
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="has-arrow sidebar-menu-link p-2" aria-expanded="false">
+                            <i class="ri-calendar-check-line me-2"></i>
+                            Event Management
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#" class="sidebar-menu-link p-2">
+                                    Event List
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar-menu-link p-2">
+                                    Registration Desk
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar-menu-link p-2">
+                                    Exhibition List
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar-menu-link p-2">
+                                    Event List
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-menu-link p-2">
+                            <i class="ri-settings-5-line me-2"></i>
+                            Premises
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-menu-link p-2">
+                            <i class="ri-user-shared-2-line me-2"></i>
+                            Visitors
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="has-arrow sidebar-menu-link p-2" aria-expanded="false">
+                            <i class="ri-group-3-line me-2"></i>
+                            Member
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#" class="sidebar-menu-link p-2">
+                                    Members List
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar-menu-link p-2">
+                                    Department List
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="has-arrow sidebar-menu-link p-2" aria-expanded="false">
+                            <i class="ri-file-chart-line me-2"></i>
+                            Reports
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#" class="sidebar-menu-link p-2">
+                                    Visit Reports
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar-menu-link p-2">
+                                    Visitor Reports
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar-menu-link p-2">
+                                    Appointment Reports
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar-menu-link p-2">
+                                    Attendence Reports
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar-menu-link p-2">
+                                    Event Reg. Reports
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar-menu-link p-2">
+                                    Trespassers Report
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar-menu-link p-2">
+                                    Activity Log Report
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar-menu-link p-2">
+                                    Excel Status Report
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-menu-link p-2">
+                            <i class="ri-list-settings-line me-2"></i>
+                            All Masters
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="has-arrow sidebar-menu-link p-2" aria-expanded="false">
+                            <i class="ri-folder-image-line me-2"></i>
+                            Template
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#" class="sidebar-menu-link p-2">
+                                    Pass Format
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar-menu-link p-2">
+                                    Notifications
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-menu-link p-2">
+                            <i class="ri-import-line me-2"></i>
+                            Import Data
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-menu-link p-2">
+                            <i class="ri-feedback-line me-2"></i>
+                            Feedback
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <div class="flex-grow-1" style="margin-left: 260px;">
+
+            <header class="position-sticky top-0 z-2">
+                <nav
+                    class="d-flex align-items-center justify-content-between bg-light container-fluid py-3 border-bottom">
+                    <div class="d-flex align-items-center gap-3">
+                        <!-- toggle sidebar button -->
+                        <button type="button" class="btn btn-icon btn-light fs-22" title="">
+                            <i class="ri-menu-line"></i>
+                        </button>
+                        <!-- searchbar -->
+                        <form class="d-none d-lg-flex">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <button type="submit" class="input-group-text">
+                                    <i class="ri-search-2-line"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="d-flex flex-nowrap align-items-center gap-3">
+                        <!-- toggle theme button -->
+                        <button type="button" id="btnTheme" class="btn btn-icon btn-light fs-22" title="Change Theme">
+                            <i class="ri-moon-line"></i>
+                        </button>
+                        <!-- toggle full screen button -->
+                        <button type="button" id="btnFullscreen" class="btn btn-icon btn-light fs-22"
+                            title="Full Screen">
+                            <i class="ri-fullscreen-line"></i>
+                        </button>
+                        <!-- dropdown menu -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-light btn-sm dropdown-toggle no-arrow"
+                                data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                                <div class="d-flex gap-2 flex-nowrap align-items-center">
+                                    <img src="./assets/images/avatar.jpg" alt="User" width="40" height="40"
+                                        class="rounded-circle me-2">
+                                    <div class="d-flex flex-column align-items-start d-none d-lg-flex">
+                                        <span class="fw-medium">Ali Hassnain</span>
+                                        <small class="text-body-tertiary">alimurtaza32721@gmail.com</small>
+                                    </div>
+                                </div>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end w-100">
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" type="button">
+                                        <i class="ri-user-line me-2"></i>
+                                        Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" type="button">
+                                        <i class="ri-settings-2-line me-2"></i>
+                                        Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" type="button">
+                                        <i class="ri-logout-circle-line me-2"></i>
+                                        Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <main class="w-100 vh-100">
+
+
+            </main>
+
+            <footer class="position-fixed bottom-0 end-0 z-2 container-fluid bg-light py-3 border-top">
+                <small class="text-end d-block fw-medium">
+                    Copyright © <span id="year"></span> <a href="https://h3techs.com/" target="_blank">H3
+                        Technologies</a>
+                </small>
+            </footer>
+        </div>
+
+    </div>
+
     <!-- bootstrap bundle js -->
     <script src="./assets/bootstrap-5.3.8/js/bootstrap.bundle.js"></script>
+    <!-- metismenu js cdn -->
+    <script src="https://unpkg.com/metismenu"></script>
+
     <!-- app js -->
     <script src="./assets/js/app.js"></script>
 </body>
