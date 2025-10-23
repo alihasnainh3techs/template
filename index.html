@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="./assets/bootstrap-5.3.8/css/bootstrap.css">
     <!-- metismenu cdn -->
     <link rel="stylesheet" href="https://unpkg.com/metismenu/dist/metisMenu.min.css">
+    <!-- perfect scrollbar -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/perfect-scrollbar@1.5.5/css/perfect-scrollbar.css">
     <!-- custom utilities css -->
     <link rel="stylesheet" href="./assets/css/custom-utilities.css">
     <!-- custom css  -->
@@ -35,198 +37,213 @@
 
     <div class="d-flex">
 
-        <aside class="position-fixed top-0 start-0 z-3 vh-100 bg-dark border-end" style="width: 260px !important;">
-            <div class="border-bottom logo-wrapper p-3">
+        <!----------- sidebar start ----------->
+
+        <aside class="aside aside-open position-fixed top-0 start-0 z-4 bg-dark border-end overflow-x-hidden">
+            <div class="border-bottom logo-wrapper p-lg-3 p-2">
                 <a href="./index.html">
-                    <img src="./assets/images/logo.png" width="160" alt="Logo">
+                    <img src="./assets/images/logo.png" class="logo" width="160" alt="Logo">
+                    <img src="./assets/images/logo-sm.png" class="logo-sm" width="54" alt="Logo">
                 </a>
             </div>
-            <div class="sidebar-menu p-3 overflow-y-auto h-100">
-                <ul id="metismenu" class="list-unstyled">
+            <div class="ps-container sidebar-menu px-lg-3 px-2 pt-lg-3 pt-2 overflow-y-auto h-100">
+                <ul id="metismenu" class="list-unstyled overflow-x-hidden">
                     <li class="mm-active">
                         <a href="./index.html" class="sidebar-menu-link p-2">
-                            <i class="ri-dashboard-line me-2"></i>
-                            Dashboard
+                            <i class="ri-dashboard-line"></i>
+                            <span>Dashboard</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="sidebar-menu-link p-2">
-                            <i class="ri-computer-line me-2"></i>
-                            Reception Desk
+                            <i class="ri-computer-line"></i>
+                            <span>Reception Desk</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="sidebar-menu-link p-2">
-                            <i class="ri-team-line me-2"></i>
-                            Visitor Desk
+                            <i class="ri-team-line"></i>
+                            <span>Visitor Desk</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="sidebar-menu-link p-2">
-                            <i class="ri-calendar-line me-2"></i>
-                            Appointment Desk
+                            <i class="ri-calendar-line"></i>
+                            <span>Appointment Desk</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="sidebar-menu-link p-2">
-                            <i class="ri-star-line me-2"></i>
-                            Event Desk
+                            <i class="ri-star-line"></i>
+                            <span>Event Desk</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="has-arrow sidebar-menu-link p-2" aria-expanded="false">
-                            <i class="ri-calendar-check-line me-2"></i>
-                            Event Management
+                        <a href="#" data-sidebar-dropdown class="has-arrow sidebar-menu-link p-2" aria-expanded="false">
+                            <i class="ri-calendar-check-line"></i>
+                            <span>Event Management</span>
                         </a>
                         <ul>
                             <li>
                                 <a href="#" class="sidebar-menu-link p-2">
-                                    Event List
+                                    <span>Event List</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="sidebar-menu-link p-2">
-                                    Registration Desk
+                                    <span>Registration Desk</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="sidebar-menu-link p-2">
-                                    Exhibition List
+                                    <span>Exhibition List</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="sidebar-menu-link p-2">
-                                    Event List
+                                    <span>Event List</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <a href="#" class="sidebar-menu-link p-2">
-                            <i class="ri-settings-5-line me-2"></i>
-                            Premises
+                            <i class="ri-settings-5-line"></i>
+                            <span>Premises</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="sidebar-menu-link p-2">
-                            <i class="ri-user-shared-2-line me-2"></i>
-                            Visitors
+                            <i class="ri-user-shared-2-line"></i>
+                            <span>Visitors</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="has-arrow sidebar-menu-link p-2" aria-expanded="false">
-                            <i class="ri-group-3-line me-2"></i>
-                            Member
+                        <a href="#" data-sidebar-dropdown class="has-arrow sidebar-menu-link p-2" aria-expanded="false">
+                            <i class="ri-group-3-line"></i>
+                            <span>Member</span>
                         </a>
                         <ul>
                             <li>
                                 <a href="#" class="sidebar-menu-link p-2">
-                                    Members List
+                                    <span>Members List</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="sidebar-menu-link p-2">
-                                    Department List
+                                    <span>Department List</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#" class="has-arrow sidebar-menu-link p-2" aria-expanded="false">
-                            <i class="ri-file-chart-line me-2"></i>
-                            Reports
+                        <a href="#" data-sidebar-dropdown class="has-arrow sidebar-menu-link p-2" aria-expanded="false">
+                            <i class="ri-file-chart-line"></i>
+                            <span>Reports</span>
                         </a>
                         <ul>
                             <li>
                                 <a href="#" class="sidebar-menu-link p-2">
-                                    Visit Reports
+                                    <span>Visit Reports</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="sidebar-menu-link p-2">
-                                    Visitor Reports
+                                    <span>Visitor Reports</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="sidebar-menu-link p-2">
-                                    Appointment Reports
+                                    <span>Appointment Reports</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="sidebar-menu-link p-2">
-                                    Attendence Reports
+                                    <span>Attendence Reports</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="sidebar-menu-link p-2">
-                                    Event Reg. Reports
+                                    <span>Event Reg. Reports</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="sidebar-menu-link p-2">
-                                    Trespassers Report
+                                    <span>Trespassers Report</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="sidebar-menu-link p-2">
-                                    Activity Log Report
+                                    <span>Activity Log Report</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="sidebar-menu-link p-2">
-                                    Excel Status Report
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="sidebar-menu-link p-2">
-                            <i class="ri-list-settings-line me-2"></i>
-                            All Masters
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="has-arrow sidebar-menu-link p-2" aria-expanded="false">
-                            <i class="ri-folder-image-line me-2"></i>
-                            Template
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="#" class="sidebar-menu-link p-2">
-                                    Pass Format
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="sidebar-menu-link p-2">
-                                    Notifications
+                                    <span>Excel Status Report</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <a href="#" class="sidebar-menu-link p-2">
-                            <i class="ri-import-line me-2"></i>
-                            Import Data
+                            <i class="ri-list-settings-line"></i>
+                            <span>All Masters</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-sidebar-dropdown class="has-arrow sidebar-menu-link p-2" aria-expanded="false">
+                            <i class="ri-folder-image-line"></i>
+                            <span>Template</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#" class="sidebar-menu-link p-2">
+                                    <span>Pass Format</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar-menu-link p-2">
+                                    <span>Notifications</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-menu-link p-2">
+                            <i class="ri-import-line"></i>
+                            <span>Import Data</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="sidebar-menu-link p-2">
-                            <i class="ri-feedback-line me-2"></i>
-                            Feedback
+                            <i class="ri-feedback-line"></i>
+                            <span>Feedback</span>
                         </a>
                     </li>
                 </ul>
             </div>
         </aside>
 
-        <div class="flex-grow-1" style="margin-left: 260px;">
+        <!----------- sidebar end ----------->
+
+
+        <!----------- overlay ----------->
+
+        <div class="overlay d-none"></div>
+
+        <!----------- overlay ----------->
+
+
+        <div class="flex-grow-1 main-container">
+
+            <!----------- header start ----------->
 
             <header class="position-sticky top-0 z-2">
                 <nav
-                    class="d-flex align-items-center justify-content-between bg-light container-fluid py-3 border-bottom">
-                    <div class="d-flex align-items-center gap-3">
+                    class="d-flex align-items-center justify-content-between bg-light container-fluid py-lg-3 py-2 border-bottom">
+                    <div class="d-flex align-items-center gap-2">
                         <!-- toggle sidebar button -->
-                        <button type="button" class="btn btn-icon btn-light fs-22" title="">
+                        <button type="button" id="btnSidebar" class="btn btn-icon btn-light fs-22" title="">
                             <i class="ri-menu-line"></i>
                         </button>
                         <!-- searchbar -->
@@ -239,15 +256,26 @@
                             </div>
                         </form>
                     </div>
-                    <div class="d-flex flex-nowrap align-items-center gap-3">
-                        <!-- toggle theme button -->
-                        <button type="button" id="btnTheme" class="btn btn-icon btn-light fs-22" title="Change Theme">
-                            <i class="ri-moon-line"></i>
-                        </button>
+                    <div class="d-flex flex-nowrap align-items-center gap-2">
                         <!-- toggle full screen button -->
                         <button type="button" id="btnFullscreen" class="btn btn-icon btn-light fs-22"
                             title="Full Screen">
                             <i class="ri-fullscreen-line"></i>
+                        </button>
+                        <!-- notifications -->
+                        <button type="button" id="btnNotification"
+                            class="btn btn-icon btn-light position-relative fs-22" title="Notifications">
+                            <i class="ri-notification-2-line"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fw-normal"
+                                style="font-size: 11px !important;">
+                                99+
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                        </button>
+                        <!-- toggle theme button -->
+                        <button type="button" id="btnTheme" class="btn btn-icon btn-light fs-22" title="Change Theme">
+                            <i class="ri-moon-line"></i>
                         </button>
                         <!-- dropdown menu -->
                         <div class="btn-group">
@@ -279,7 +307,8 @@
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li>
-                                    <a class="dropdown-item d-flex align-items-center" type="button">
+                                    <a class="dropdown-item d-flex align-items-center" data-bs-toggle="modal"
+                                        data-bs-target="#logoutModal" type="button">
                                         <i class="ri-logout-circle-line me-2"></i>
                                         Logout
                                     </a>
@@ -290,28 +319,66 @@
                 </nav>
             </header>
 
-            <main class="w-100 vh-100">
+            <!----------- header start ----------->
 
 
+            <!-- confirm logout modal -->
+            <div class="modal fade" id="logoutModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="logoutModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="logoutModalLabel">Sign out</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you would like to sign out of your account?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary">Sign out</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!----------- main page start ----------->
+
+            <main class="container-fluid py-3 min-h-dvh">
+                <h1 class="display-6 greeting"><span></span> Ali Hassnain</h1>
             </main>
 
-            <footer class="position-fixed bottom-0 end-0 z-2 container-fluid bg-light py-3 border-top">
-                <small class="text-end d-block fw-medium">
+            <!----------- main page end ----------->
+
+
+            <!----------- footer start ----------->
+
+            <footer class="sticky-footer container-fluid bg-light py-3 border-top">
+                <small class="text-lg-end text-center d-block fw-medium">
                     Copyright © <span id="year"></span> <a href="https://h3techs.com/" target="_blank">H3
                         Technologies</a>
                 </small>
             </footer>
+
+            <!----------- footer end ----------->
+
+
         </div>
 
     </div>
 
     <!-- bootstrap bundle js -->
     <script src="./assets/bootstrap-5.3.8/js/bootstrap.bundle.js"></script>
+    <!-- perfect scrollbar -->
+    <script src="https://cdn.jsdelivr.net/npm/perfect-scrollbar@1.5.5/dist/perfect-scrollbar.min.js"></script>
     <!-- metismenu js cdn -->
     <script src="https://unpkg.com/metismenu"></script>
 
     <!-- app js -->
     <script src="./assets/js/app.js"></script>
+    <!-- index.js -->
+    <script src="./assets/js/index.js"></script>
 </body>
 
 </html>

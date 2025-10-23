@@ -1,13 +1,60 @@
 $(document).ready(function () {
 
+    // Initialize Perfect Scrollbar
+    new PerfectScrollbar('.ps-container', {
+        wheelPropagation: false,
+    });
+
+    // metismenu plugin
+    $("#metismenu").metisMenu();
+
     // apply icon according to theme
     $("html").attr("data-bs-theme") === "light" ? $("#btnTheme i").removeClass("ri-sun-line").addClass("ri-moon-line") : $("#btnTheme i").removeClass("ri-moon-line").addClass("ri-sun-line");
+
+    const sidebar = $(".aside");
+    const menuLinks = $(".sidebar-menu-link[data-sidebar-dropdown]");
+    const SIDEBAR_KEY = "sidebar-state";
+
+    // Apply saved sidebar state from localStorage
+    const savedState = localStorage.getItem(SIDEBAR_KEY);
+    if (savedState === "closed") {
+        sidebar.removeClass("aside-open").addClass("aside-closed");
+        menuLinks.removeClass("has-arrow");
+    } else {
+        sidebar.removeClass("aside-closed").addClass("aside-open");
+        menuLinks.addClass("has-arrow");
+    }
 
     // set current year
     $("#year").text(new Date().getFullYear());
 
-    // metismenu plugin
-    $("#metismenu").metisMenu();
+    // Toggle sidebar
+    $("#btnSidebar").on("click", function () {
+        if (sidebar.hasClass("aside-open")) {
+            sidebar.removeClass("aside-open").addClass("aside-closed");
+            menuLinks.removeClass("has-arrow");
+            localStorage.setItem(SIDEBAR_KEY, "closed");
+        } else {
+            sidebar.removeClass("aside-closed").addClass("aside-open");
+            menuLinks.addClass("has-arrow");
+            localStorage.setItem(SIDEBAR_KEY, "open");
+        }
+    });
+
+    // Sidebar hover (mouseenter / mouseleave)
+    sidebar.on("mouseenter", function () {
+        if (sidebar.hasClass("aside-closed")) {
+            menuLinks.addClass("has-arrow");
+            sidebar.addClass("aside-hovered");
+        }
+    });
+
+    sidebar.on("mouseleave", function () {
+        if (sidebar.hasClass("aside-closed")) {
+            menuLinks.removeClass("has-arrow");
+            sidebar.removeClass("aside-hovered");
+        }
+    });
 
     // toggle full screen
     $("#btnFullscreen").on("click", function () {
@@ -37,5 +84,4 @@ $(document).ready(function () {
             localStorage.setItem("data-bs-theme", "light");
         }
     })
-
 });

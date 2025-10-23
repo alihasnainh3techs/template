@@ -5,3 +5,11 @@
 .no-arrow::after {
     display: none !important;
 }
+
+.z-4 {
+    z-index: 4 !important;
+}
+
+.min-h-dvh {
+    min-height: 100dvh;
+}
