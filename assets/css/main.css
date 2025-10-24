@@ -137,6 +137,10 @@ body {
     z-index: 3;
 }
 
+.search-input:focus {
+    box-shadow: none !important;
+}
+
 /* footer */
 @media (min-width: 992px) {
     .sticky-footer {
@@ -145,4 +149,24 @@ body {
         right: 0;
         z-index: 2;
     }
+}
+
+/* notification menu */
+
+.notification-menu {
+    width: 100%;
+    min-width: 400px;
+}
+
+.unread-dot {
+    font-size: 11px !important;
+}
+
+.notification-scroller {
+    height: auto;
+    max-height: 350px;
+}
+
+.notification-item:hover {
+    background-color: var(--bs-light) !important;
 }

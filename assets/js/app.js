@@ -5,6 +5,12 @@ $(document).ready(function () {
         wheelPropagation: false,
     });
 
+    $('.notification-scroller').each(function () {
+        new PerfectScrollbar(this, {
+            wheelPropagation: false,
+        });
+    });
+
     // metismenu plugin
     $("#metismenu").metisMenu();
 

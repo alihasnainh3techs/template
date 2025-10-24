@@ -46,7 +46,7 @@
                     <img src="./assets/images/logo-sm.png" class="logo-sm" width="54" alt="Logo">
                 </a>
             </div>
-            <div class="ps-container sidebar-menu px-lg-3 px-2 pt-lg-3 pt-2 overflow-y-auto h-100">
+            <div class="ps-container sidebar-menu px-lg-3 px-2 pt-lg-3 pt-2 h-100">
                 <ul id="metismenu" class="list-unstyled overflow-x-hidden">
                     <li class="mm-active">
                         <a href="./index.html" class="sidebar-menu-link p-2">
@@ -246,33 +246,201 @@
                         <button type="button" id="btnSidebar" class="btn btn-icon btn-light fs-22" title="">
                             <i class="ri-menu-line"></i>
                         </button>
-                        <!-- searchbar -->
-                        <form class="d-none d-lg-flex">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <button type="submit" class="input-group-text">
-                                    <i class="ri-search-2-line"></i>
-                                </button>
-                            </div>
-                        </form>
                     </div>
                     <div class="d-flex flex-nowrap align-items-center gap-2">
+                        <!-- searchbar for small screens -->
+                        <button type="button" class="btn btn-icon btn-light fs-22" data-bs-toggle="modal"
+                            data-bs-target="#searchModal" title="Search">
+                            <i class="ri-search-2-line"></i>
+                        </button>
                         <!-- toggle full screen button -->
                         <button type="button" id="btnFullscreen" class="btn btn-icon btn-light fs-22"
                             title="Full Screen">
                             <i class="ri-fullscreen-line"></i>
                         </button>
                         <!-- notifications -->
-                        <button type="button" id="btnNotification"
-                            class="btn btn-icon btn-light position-relative fs-22" title="Notifications">
-                            <i class="ri-notification-2-line"></i>
-                            <span
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fw-normal"
-                                style="font-size: 11px !important;">
-                                99+
-                                <span class="visually-hidden">unread messages</span>
-                            </span>
-                        </button>
+                        <div class="position-relative">
+                            <button type="button" id="btnNotification"
+                                class="btn btn-icon btn-light position-relative fs-22" title="Notifications">
+                                <i class="ri-notification-2-line"></i>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fw-normal"
+                                    style="font-size: 11px !important;">
+                                    99+
+                                    <span class="visually-hidden">unread messages</span>
+                                </span>
+                            </button>
+
+                            <!-- notification menu -->
+                            <div class="position-absolute shadow z-2 end-0 rounded-3 bg-white notification-menu">
+                                <div
+                                    class="d-flex justify-content-between align-items-center border-bottom px-3 pt-3 pb-2">
+                                    <h5 class="mb-0">Notifications</h5>
+                                    <button type="button" class="btn btn-sm btn-close">
+                                    </button>
+                                </div>
+                                <div>
+                                    <ul class="nav nav-underline nav-fill px-3 pt-0 pb-3" id="notificationTabs"
+                                        role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <a class="cursor-pointer nav-link active fw-medium"
+                                                id="all-notification-tab" data-bs-toggle="tab"
+                                                data-bs-target="#all-notification" role="tab"
+                                                aria-controls="all-notification" aria-selected="true">
+                                                All
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="cursor-pointer nav-link fw-medium" id="unread-notification-tab"
+                                                data-bs-toggle="tab" data-bs-target="#unread-notification" role="tab"
+                                                aria-controls="unread-notification" aria-selected="false">
+                                                Unread
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="cursor-pointer nav-link fw-medium" id="read-notification-tab"
+                                                data-bs-toggle="tab" data-bs-target="#read-notification" role="tab"
+                                                aria-controls="read-notification" aria-selected="false">
+                                                Read
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div>
+                                        <!-- Tab content -->
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active notification-scroller position-relative"
+                                                id="all-notification" role="tabpanel"
+                                                aria-labelledby="all-notification-tab">
+                                                <div
+                                                    class="cursor-pointer p-3 border-bottom d-flex justify-content-between align-items-center bg-info-subtle notification-item">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <div>
+                                                            <i class="ri-calendar-line fs-5 text-danger"></i>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0">Deadline Reminder</h6>
+                                                            <small class="text-truncate">Submit your lab report</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex flex-column align-items-end">
+                                                        <span class="unread-dot">
+                                                            <i class="ri-circle-fill"></i>
+                                                        </span>
+                                                        <span class="text-body-tertiary small">12 min ago</span>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="cursor-pointer p-3 border-bottom d-flex justify-content-between align-items-center notification-item">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <div>
+                                                            <i class="ri-megaphone-line fs-5 text-warning"></i>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0">New Announcement</h6>
+                                                            <small class="text-truncate">
+                                                                A major update has just landed — enjoy a faster,
+                                                                smarter, and
+                                                                more responsive dashboard experience!
+                                                                Stay tuned for more exciting features rolling out soon.
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="text-body-tertiary small">1 day ago</span>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="cursor-pointer p-3 border-bottom d-flex justify-content-between align-items-center notification-item">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <div>
+                                                            <i class="ri-book-open-line fs-5 text-success"></i>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0">New Assignment Posted</h6>
+                                                            <small class="text-truncate">
+                                                                A major update has just landed — enjoy a faster,
+                                                                smarter, and
+                                                                more responsive dashboard experience!
+                                                                Stay tuned for more exciting features rolling out soon.
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="text-body-tertiary small">May 25, 24</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade notification-scroller position-relative"
+                                                id="unread-notification" role="tabpanel"
+                                                aria-labelledby="unread-notification-tab">
+                                                <div
+                                                    class="cursor-pointer p-3 border-bottom d-flex justify-content-between align-items-center bg-info-subtle notification-item">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <div>
+                                                            <i class="ri-calendar-line fs-5 text-danger"></i>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0">Deadline Reminder</h6>
+                                                            <small class="text-truncate">Submit your lab report</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex flex-column align-items-end">
+                                                        <span class="unread-dot">
+                                                            <i class="ri-circle-fill"></i>
+                                                        </span>
+                                                        <span class="text-body-tertiary small">12 min ago</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade notification-scroller position-relative"
+                                                id="read-notification" role="tabpanel"
+                                                aria-labelledby="read-notification-tab">
+                                                <div
+                                                    class="cursor-pointer p-3 border-bottom d-flex justify-content-between align-items-center notification-item">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <div>
+                                                            <i class="ri-megaphone-line fs-5 text-warning"></i>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0">New Announcement</h6>
+                                                            <small class="text-truncate">
+                                                                A major update has just landed — enjoy a faster,
+                                                                smarter, and
+                                                                more responsive dashboard experience!
+                                                                Stay tuned for more exciting features rolling out soon.
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="text-body-tertiary small">1 day ago</span>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="cursor-pointer p-3 border-bottom d-flex justify-content-between align-items-center notification-item">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <div>
+                                                            <i class="ri-book-open-line fs-5 text-success"></i>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0">New Assignment Posted</h6>
+                                                            <small class="text-truncate">
+                                                                A major update has just landed — enjoy a faster,
+                                                                smarter, and
+                                                                more responsive dashboard experience!
+                                                                Stay tuned for more exciting features rolling out soon.
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="text-body-tertiary small">May 25, 24</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- toggle theme button -->
                         <button type="button" id="btnTheme" class="btn btn-icon btn-light fs-22" title="Change Theme">
                             <i class="ri-moon-line"></i>
@@ -299,6 +467,12 @@
                                 </li>
                                 <li>
                                     <a class="dropdown-item d-flex align-items-center" type="button">
+                                        <i class="ri-palette-line me-2"></i>
+                                        Appearance
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" type="button">
                                         <i class="ri-settings-2-line me-2"></i>
                                         Settings
                                     </a>
@@ -321,6 +495,26 @@
 
             <!----------- header start ----------->
 
+
+            <!-- search modal -->
+            <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <form>
+                                <div class="d-flex align-items-center border rounded-3 p-1">
+                                    <button type="submit" class="btn bg-transparent btn-icon btn-light border-0">
+                                        <i class="ri-search-2-line fs-22"></i>
+                                    </button>
+                                    <input type="text" required placeholder="Search..."
+                                        class="form-control border-0 search-input ps-1">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- confirm logout modal -->
             <div class="modal fade" id="logoutModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"

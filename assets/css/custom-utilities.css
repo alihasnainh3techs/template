@@ -13,3 +13,7 @@
 .min-h-dvh {
     min-height: 100dvh;
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}
