@@ -1,7 +1,3 @@
-[data-bs-theme="dark"] .text-body-tertiary {
-    color: var(--bs-dark) !important;
-}
-
 body {
     font-family: "Outfit", sans-serif;
 }
@@ -34,7 +30,8 @@ body {
 
 .aside {
     transition: all 0.2s ease-in-out;
-    height: 100dvh !important;
+    /* height: 100dvh !important; */
+    height: 100vh !important;
     overflow-y: hidden;
 }
 
@@ -115,15 +112,14 @@ body {
 
 .sidebar-menu-link {
     text-decoration: none;
-    color: var(--bs-light);
+    color: var(--text-body-emphasis);
     display: flex;
     width: 100%;
     border-radius: var(--bs-border-radius-sm);
 }
 
 .sidebar-menu-link:hover {
-    color: var(--bs-dark);
-    background: var(--bs-light);
+    background: var(--bs-secondary-bg);
 }
 
 .overlay {
@@ -156,6 +152,7 @@ body {
 .notification-menu {
     width: 100%;
     min-width: 400px;
+    display: none;
 }
 
 .unread-dot {
@@ -168,5 +165,5 @@ body {
 }
 
 .notification-item:hover {
-    background-color: var(--bs-light) !important;
+    background-color: var(--bs-secondary-bg) !important;
 }

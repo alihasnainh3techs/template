@@ -90,4 +90,14 @@ $(document).ready(function () {
             localStorage.setItem("data-bs-theme", "light");
         }
     })
+
+    // toggle notification menu
+    $("#btnNotification").on("click", function () {
+        $(".notification-menu").toggle();
+    })
+
+    $("#btncloseNotification").on("click", function () {
+        $(".notification-menu").toggle();
+    })
+
 });

@@ -39,7 +39,7 @@
 
         <!----------- sidebar start ----------->
 
-        <aside class="aside aside-open position-fixed top-0 start-0 z-4 bg-dark border-end overflow-x-hidden">
+        <aside class="aside aside-open position-fixed top-0 start-0 z-4 bg-body-tertiary border-end overflow-x-hidden">
             <div class="border-bottom logo-wrapper p-lg-3 p-2">
                 <a href="./index.html">
                     <img src="./assets/images/logo.png" class="logo" width="160" alt="Logo">
@@ -240,28 +240,28 @@
 
             <header class="position-sticky top-0 z-2">
                 <nav
-                    class="d-flex align-items-center justify-content-between bg-light container-fluid py-lg-3 py-2 border-bottom">
+                    class="d-flex align-items-center justify-content-between bg-body-tertiary container-fluid py-lg-3 py-2 border-bottom">
                     <div class="d-flex align-items-center gap-2">
                         <!-- toggle sidebar button -->
-                        <button type="button" id="btnSidebar" class="btn btn-icon btn-light fs-22" title="">
+                        <button type="button" id="btnSidebar" class="btn btn-icon fs-22" title="">
                             <i class="ri-menu-line"></i>
                         </button>
                     </div>
                     <div class="d-flex flex-nowrap align-items-center gap-2">
                         <!-- searchbar for small screens -->
-                        <button type="button" class="btn btn-icon btn-light fs-22" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-icon fs-22" data-bs-toggle="modal"
                             data-bs-target="#searchModal" title="Search">
                             <i class="ri-search-2-line"></i>
                         </button>
                         <!-- toggle full screen button -->
-                        <button type="button" id="btnFullscreen" class="btn btn-icon btn-light fs-22"
+                        <button type="button" id="btnFullscreen" class="btn btn-icon fs-22 d-lg-inline d-none"
                             title="Full Screen">
                             <i class="ri-fullscreen-line"></i>
                         </button>
                         <!-- notifications -->
                         <div class="position-relative">
-                            <button type="button" id="btnNotification"
-                                class="btn btn-icon btn-light position-relative fs-22" title="Notifications">
+                            <button type="button" id="btnNotification" class="btn btn-icon position-relative fs-22"
+                                title="Notifications">
                                 <i class="ri-notification-2-line"></i>
                                 <span
                                     class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fw-normal"
@@ -272,11 +272,13 @@
                             </button>
 
                             <!-- notification menu -->
-                            <div class="position-absolute shadow z-2 end-0 rounded-3 bg-white notification-menu">
+                            <div
+                                class="position-absolute shadow z-2 end-0 rounded-3 bg-body-tertiary notification-menu">
                                 <div
                                     class="d-flex justify-content-between align-items-center border-bottom px-3 pt-3 pb-2">
                                     <h5 class="mb-0">Notifications</h5>
-                                    <button type="button" class="btn btn-sm btn-close">
+                                    <button type="button" title="Close" id="btncloseNotification"
+                                        class="btn btn-sm btn-close">
                                     </button>
                                 </div>
                                 <div>
@@ -442,13 +444,13 @@
                             </div>
                         </div>
                         <!-- toggle theme button -->
-                        <button type="button" id="btnTheme" class="btn btn-icon btn-light fs-22" title="Change Theme">
+                        <button type="button" id="btnTheme" class="btn btn-icon fs-22" title="Change Theme">
                             <i class="ri-moon-line"></i>
                         </button>
                         <!-- dropdown menu -->
                         <div class="btn-group">
-                            <button type="button" class="btn btn-light btn-sm dropdown-toggle no-arrow"
-                                data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                            <button type="button" class="btn btn-sm dropdown-toggle no-arrow" data-bs-toggle="dropdown"
+                                data-bs-display="static" aria-expanded="false">
                                 <div class="d-flex gap-2 flex-nowrap align-items-center">
                                     <img src="./assets/images/avatar.jpg" alt="User" width="40" height="40"
                                         class="rounded-circle me-2">
@@ -463,12 +465,6 @@
                                     <a class="dropdown-item d-flex align-items-center" type="button">
                                         <i class="ri-user-line me-2"></i>
                                         Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item d-flex align-items-center" type="button">
-                                        <i class="ri-palette-line me-2"></i>
-                                        Appearance
                                     </a>
                                 </li>
                                 <li>
@@ -504,7 +500,7 @@
                         <div class="modal-body">
                             <form>
                                 <div class="d-flex align-items-center border rounded-3 p-1">
-                                    <button type="submit" class="btn bg-transparent btn-icon btn-light border-0">
+                                    <button type="submit" class="btn bg-transparent btn-icon border-0">
                                         <i class="ri-search-2-line fs-22"></i>
                                     </button>
                                     <input type="text" required placeholder="Search..."
@@ -548,9 +544,10 @@
 
             <!----------- footer start ----------->
 
-            <footer class="sticky-footer container-fluid bg-light py-3 border-top">
+            <footer class="sticky-footer container-fluid bg-body-tertiary py-3 border-top w-100">
                 <small class="text-lg-end text-center d-block fw-medium">
-                    Copyright © <span id="year"></span> <a href="https://h3techs.com/" target="_blank">H3
+                    Copyright <i class="ri-copyright-line"></i> <span id="year"></span> <a href="https://h3techs.com/"
+                        target="_blank">H3
                         Technologies</a>
                 </small>
             </footer>
