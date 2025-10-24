@@ -91,13 +91,24 @@ $(document).ready(function () {
         }
     })
 
-    // toggle notification menu
-    $("#btnNotification").on("click", function () {
-        $(".notification-menu").toggle();
-    })
+    // notification menu
+    const $notifMenu = $(".notification-menu");
 
+    // hide initially
+    $notifMenu.hide();
+
+    // open/close on button click
+    $("#btnNotification").on("click", function () {
+        if ($notifMenu.is(":visible")) {
+            $notifMenu.fadeOut();
+        } else {
+            $notifMenu.fadeIn();
+        }
+    });
+
+    // close button click
     $("#btncloseNotification").on("click", function () {
-        $(".notification-menu").toggle();
-    })
+        $notifMenu.fadeOut();
+    });
 
 });

@@ -150,9 +150,24 @@ body {
 /* notification menu */
 
 .notification-menu {
-    width: 100%;
-    min-width: 400px;
+    position: absolute;
+    top: 3.4rem;
+    right: 0;
+    max-width: 400px;
+    width: 90vw;
+    min-width: 300px;
     display: none;
+}
+
+@media (max-width: 768px) {
+    .notification-menu {
+        position: fixed;
+        left: 50%;
+        right: unset;
+        transform: translateX(-50%);
+        width: 90vw;
+        min-width: unset;
+    }
 }
 
 .unread-dot {
@@ -166,4 +181,9 @@ body {
 
 .notification-item:hover {
     background-color: var(--bs-secondary-bg) !important;
+}
+
+/* signup form */
+.signup-form {
+    min-height: 100dvh;
 }
