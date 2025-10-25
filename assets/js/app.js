@@ -34,18 +34,48 @@ $(document).ready(function () {
     // set current year
     $("#year").text(new Date().getFullYear());
 
-    // Toggle sidebar
-    $("#btnSidebar").on("click", function () {
-        if (sidebar.hasClass("aside-open")) {
-            sidebar.removeClass("aside-open").addClass("aside-closed");
-            menuLinks.removeClass("has-arrow");
-            localStorage.setItem(SIDEBAR_KEY, "closed");
-        } else {
-            sidebar.removeClass("aside-closed").addClass("aside-open");
-            menuLinks.addClass("has-arrow");
-            localStorage.setItem(SIDEBAR_KEY, "open");
+    const overlay = $(".overlay");
+    const btnCloseSidebar = $("#btnCloseSidebar");
+
+    if (window.innerWidth <= 992) {
+        sidebar.addClass("aside-mobile");
+        sidebar.removeClass("aside-closed");
+    }
+
+    $(window).on("resize", function () {
+        if (window.innerWidth <= 992) {
+            sidebar.addClass("aside-mobile");
+            sidebar.removeClass("aside-closed");
         }
     });
+
+    // Toggle sidebar
+    $("#btnSidebar").on("click", function () {
+        if (window.innerWidth >= 992) {
+            if (sidebar.hasClass("aside-open")) {
+                sidebar.removeClass("aside-open").addClass("aside-closed");
+                menuLinks.removeClass("has-arrow");
+                localStorage.setItem(SIDEBAR_KEY, "closed");
+            } else {
+                sidebar.removeClass("aside-closed").addClass("aside-open");
+                menuLinks.addClass("has-arrow");
+                localStorage.setItem(SIDEBAR_KEY, "open");
+            }
+        } else {
+            overlay.removeClass("d-none");
+            $(".aside-mobile").addClass("active");
+        }
+    });
+
+    btnCloseSidebar.on("click", function () {
+        overlay.addClass("d-none");
+        $(".aside-mobile").removeClass("active");
+    })
+
+    overlay.on("click", function () {
+        overlay.addClass("d-none");
+        $(".aside-mobile").removeClass("active");
+    })
 
     // Sidebar hover (mouseenter / mouseleave)
     sidebar.on("mouseenter", function () {
