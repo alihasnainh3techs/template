@@ -40,14 +40,14 @@
 
         <!----------- sidebar start ----------->
 
-        <aside
-            class="aside aside-open position-fixed top-0 start-0 z-4 bg-body-tertiary border-end overflow-x-hidden">
+        <aside class="aside aside-open position-fixed top-0 start-0 z-4 bg-body-tertiary border-end overflow-x-hidden">
             <div class="border-bottom logo-wrapper p-lg-3 p-2 d-flex align-items-center justify-content-between">
                 <a href="./index.html">
                     <img src="./assets/images/logo.png" class="logo" width="160" alt="Logo">
                     <img src="./assets/images/logo-sm.png" class="logo-sm" width="54" alt="Logo">
                 </a>
-                <button role="button" title="Close" id="btnCloseSidebar" class="btn btn-sm d-lg-none d-inline btn-close"></button>
+                <button role="button" title="Close" id="btnCloseSidebar"
+                    class="btn btn-sm d-lg-none d-inline btn-close"></button>
             </div>
             <div class="ps-container position-relative sidebar-menu px-lg-3 px-2 pt-lg-3 pt-2 h-100">
                 <ul id="metismenu" class="list-unstyled overflow-x-hidden">
@@ -230,6 +230,19 @@
             </div>
         </aside>
 
+        <script>
+            (() => {
+                const sidebarState = localStorage.getItem("sidebar-state");
+                if (sidebarState === "closed") {
+                    $(".aside").removeClass("aside-open").addClass("aside-closed");
+                    $(".sidebar-menu-link[data-sidebar-dropdown]").removeClass("has-arrow");
+                } else {
+                    $(".aside").removeClass("aside-closed").addClass("aside-open");
+                    $(".sidebar-menu-link[data-sidebar-dropdown]").addClass("has-arrow");
+                }
+            })();
+        </script>
+
         <!----------- sidebar end ----------->
 
 
@@ -320,13 +333,15 @@
                                                 aria-labelledby="all-notification-tab">
                                                 <div
                                                     class="cursor-pointer p-3 border-bottom d-flex justify-content-between align-items-center bg-info-subtle notification-item">
-                                                    <div class="d-flex align-items-center gap-3">
+                                                    <div class="d-flex align-items-center gap-3" style="width: 70%;">
                                                         <div>
                                                             <i class="ri-calendar-line fs-5 text-danger"></i>
                                                         </div>
-                                                        <div>
+                                                        <div class="w-100">
                                                             <h6 class="mb-0">Deadline Reminder</h6>
-                                                            <small class="text-truncate">Submit your lab report</small>
+                                                            <small class="text-truncate d-block"
+                                                                title="Submit your lab report">Submit your lab
+                                                                report</small>
                                                         </div>
                                                     </div>
                                                     <div class="d-flex flex-column align-items-end">
@@ -338,13 +353,14 @@
                                                 </div>
                                                 <div
                                                     class="cursor-pointer p-3 border-bottom d-flex justify-content-between align-items-center notification-item">
-                                                    <div class="d-flex align-items-center gap-3">
+                                                    <div class="d-flex align-items-center gap-3" style="width: 70%;">
                                                         <div>
                                                             <i class="ri-megaphone-line fs-5 text-warning"></i>
                                                         </div>
-                                                        <div>
+                                                        <div class="w-100">
                                                             <h6 class="mb-0">New Announcement</h6>
-                                                            <small class="text-truncate">
+                                                            <small class="text-truncate d-block"
+                                                                title="A major update has just landed — enjoy a faster, smarter, and more responsive dashboard experience! Stay tuned for more exciting features rolling out soon.">
                                                                 A major update has just landed — enjoy a faster,
                                                                 smarter, and
                                                                 more responsive dashboard experience!
@@ -358,16 +374,16 @@
                                                 </div>
                                                 <div
                                                     class="cursor-pointer p-3 border-bottom d-flex justify-content-between align-items-center notification-item">
-                                                    <div class="d-flex align-items-center gap-3">
+                                                    <div class="d-flex align-items-center gap-3" style="width: 70%;">
                                                         <div>
                                                             <i class="ri-book-open-line fs-5 text-success"></i>
                                                         </div>
-                                                        <div>
+                                                        <div class="w-100">
                                                             <h6 class="mb-0">New Assignment Posted</h6>
-                                                            <small class="text-truncate">
+                                                            <small class="text-truncate d-block"
+                                                                title="A major update has just landed — enjoy a faster, smarter, and more responsive dashboard experience! Stay tuned for more exciting features rolling out soon.">
                                                                 A major update has just landed — enjoy a faster,
-                                                                smarter, and
-                                                                more responsive dashboard experience!
+                                                                smarter, and more responsive dashboard experience!
                                                                 Stay tuned for more exciting features rolling out soon.
                                                             </small>
                                                         </div>
@@ -382,13 +398,15 @@
                                                 aria-labelledby="unread-notification-tab">
                                                 <div
                                                     class="cursor-pointer p-3 border-bottom d-flex justify-content-between align-items-center bg-info-subtle notification-item">
-                                                    <div class="d-flex align-items-center gap-3">
+                                                    <div class="d-flex align-items-center gap-3" style="width: 70%;">
                                                         <div>
                                                             <i class="ri-calendar-line fs-5 text-danger"></i>
                                                         </div>
-                                                        <div>
+                                                        <div class="w-100">
                                                             <h6 class="mb-0">Deadline Reminder</h6>
-                                                            <small class="text-truncate">Submit your lab report</small>
+                                                            <small class="text-truncate d-block"
+                                                                title="Submit your lab report">Submit your lab
+                                                                report</small>
                                                         </div>
                                                     </div>
                                                     <div class="d-flex flex-column align-items-end">
@@ -404,13 +422,14 @@
                                                 aria-labelledby="read-notification-tab">
                                                 <div
                                                     class="cursor-pointer p-3 border-bottom d-flex justify-content-between align-items-center notification-item">
-                                                    <div class="d-flex align-items-center gap-3">
+                                                    <div class="d-flex align-items-center gap-3" style="width: 70%;">
                                                         <div>
                                                             <i class="ri-megaphone-line fs-5 text-warning"></i>
                                                         </div>
-                                                        <div>
+                                                        <div class="w-100">
                                                             <h6 class="mb-0">New Announcement</h6>
-                                                            <small class="text-truncate">
+                                                            <small class="text-truncate d-block"
+                                                                title="A major update has just landed — enjoy a faster, smarter, and more responsive dashboard experience! Stay tuned for more exciting features rolling out soon.">
                                                                 A major update has just landed — enjoy a faster,
                                                                 smarter, and
                                                                 more responsive dashboard experience!
@@ -424,16 +443,16 @@
                                                 </div>
                                                 <div
                                                     class="cursor-pointer p-3 border-bottom d-flex justify-content-between align-items-center notification-item">
-                                                    <div class="d-flex align-items-center gap-3">
+                                                    <div class="d-flex align-items-center gap-3" style="width: 70%;">
                                                         <div>
                                                             <i class="ri-book-open-line fs-5 text-success"></i>
                                                         </div>
-                                                        <div>
+                                                        <div class="w-100">
                                                             <h6 class="mb-0">New Assignment Posted</h6>
-                                                            <small class="text-truncate">
+                                                            <small class="text-truncate d-block"
+                                                                title="A major update has just landed — enjoy a faster, smarter, and more responsive dashboard experience! Stay tuned for more exciting features rolling out soon.">
                                                                 A major update has just landed — enjoy a faster,
-                                                                smarter, and
-                                                                more responsive dashboard experience!
+                                                                smarter, and more responsive dashboard experience!
                                                                 Stay tuned for more exciting features rolling out soon.
                                                             </small>
                                                         </div>

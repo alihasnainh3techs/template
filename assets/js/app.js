@@ -46,6 +46,16 @@ $(document).ready(function () {
         if (window.innerWidth <= 992) {
             sidebar.addClass("aside-mobile");
             sidebar.removeClass("aside-closed");
+        } else {
+            sidebar.removeClass("aside-mobile");
+            overlay.addClass("d-none");
+            if (savedState === "closed") {
+                sidebar.removeClass("aside-open").addClass("aside-closed");
+                menuLinks.removeClass("has-arrow");
+            } else {
+                sidebar.removeClass("aside-closed").addClass("aside-open");
+                menuLinks.addClass("has-arrow");
+            }
         }
     });
 
